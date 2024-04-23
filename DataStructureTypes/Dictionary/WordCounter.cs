@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace DataStructureInterviewPrep.DataStructureTypes.Dictionary
 {
     public static class WordCounter
     {
-        public static Dictionary<string, int> CountWords(string input)
+        public static void CountWords(string input)
         {
             Dictionary<string, int> wordCounts = new Dictionary<string, int>();
 
@@ -31,7 +32,11 @@ namespace DataStructureInterviewPrep.DataStructureTypes.Dictionary
                     wordCounts.Add(inputToCount, 1);
                 }
             }
-            return wordCounts;
+
+            foreach (var item in wordCounts)
+            {
+                Console.WriteLine(item.Key + " - " + item.Value);
+            }
         }
     }
 }

@@ -9,15 +9,10 @@ namespace DataStructureInterviewPrep
     {
         static void Main(string[] args)
         {
-            //counting words in input string
+            //counting words in input string using dictionary
             string input = "If you can change your mind, you can change your life";
-            Dictionary<string, int> wordCounts = WordCounter.CountWords(input);
-
-            foreach (var item in wordCounts)
-            {
-                Console.WriteLine(item.Key + " - " + item.Value);
-                Console.WriteLine();
-            }
+            WordCounter.CountWords(input);
+            Console.WriteLine();
 
             //array console 
             ArraysConsole.Array2DExample();
