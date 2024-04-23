@@ -1,7 +1,7 @@
 ﻿using DataStructureInterviewPrep.DataStructureTypes.Arrays;
 using DataStructureInterviewPrep.DataStructureTypes.Dictionary;
+using DataStructureInterviewPrep.DataStructureTypes.LinkedList.SinglyLinkedList;
 using System;
-using System.Collections.Generic;
 
 namespace DataStructureInterviewPrep
 {
@@ -16,6 +16,20 @@ namespace DataStructureInterviewPrep
 
             //array console 
             ArraysConsole.Array2DExample();
+            Console.WriteLine();
+
+            //singly linked list adding and traversing
+            LinkedList list = new LinkedList();  // Create a new linked list
+
+            //adding nodes to linked list
+            list.AddEnd(1);
+            list.AddEnd(2);
+            list.AddEnd(3);
+            list.AddEnd(4);
+            list.AddEnd(5);
+
+            //printing the linked list
+            list.PrintList();
 
             Console.ReadLine();
         }

@@ -45,11 +45,14 @@
   <ItemGroup>
     <Compile Include="DataStructureTypes\Arrays\ArraysConsole.cs" />
     <Compile Include="DataStructureTypes\Dictionary\WordCounter.cs" />
+    <Compile Include="DataStructureTypes\LinkedList\SinglyLinkedList\LinkedList.cs" />
+    <Compile Include="DataStructureTypes\LinkedList\SinglyLinkedList\Node.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
