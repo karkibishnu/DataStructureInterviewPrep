@@ -1,4 +1,5 @@
-﻿using DataStructureInterviewPrep.DataStructureTypes.Arrays;
+﻿using DataStructureInterviewPrep.DataStructureTypes;
+using DataStructureInterviewPrep.DataStructureTypes.Arrays;
 using DataStructureInterviewPrep.DataStructureTypes.Dictionary;
 using DataStructureInterviewPrep.DataStructureTypes.LinkedList.SinglyLinkedList;
 using DataStructureInterviewPrep.DataStructureTypes.Stack;
@@ -161,12 +162,16 @@ namespace DataStructureInterviewPrep
             Console.WriteLine();
             Console.WriteLine("Stack operations");
             Stack myStack = new Stack();
-            StackOperation.PushToStack(myStack, new [] {11,22,33,44,55,66});
+            StackOperation.PushToStack(myStack, new[] { 11, 22, 33, 44, 55, 66 });
             Console.WriteLine($"Size of stack: {StackOperation.SizeOfStack(myStack)}");
             Console.WriteLine($"Top element of the stack: {StackOperation.PeekStack(myStack)}");
             StackOperation.PopAndPrintStack(myStack);
             bool isEmpty = StackOperation.IsStackEmpty(myStack);
             Console.WriteLine($"Is the stack empty? {isEmpty}");
+
+            //two pointers to print negative and positive pair
+            int[] arr = { -1, 2, 4, 3, 5, -5, 1 };
+            TwoPointer.PrintPairsWithPositiveAndNegative(arr);
 
             Console.ReadLine();
         }
