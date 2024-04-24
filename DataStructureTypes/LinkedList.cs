@@ -318,6 +318,31 @@ namespace DataStructureInterviewPrep.DataStructureTypes.LinkedList.SinglyLinkedL
             current.Dispose();
         }
 
+        //recursive method to delete a node from linked list based on key
+        public void DeleteNodeByKeyRecursive(int key)
+        {
+            head = DeleteNodeByKeyRecursive(head, key);
+        }
+
+        private Node DeleteNodeByKeyRecursive(Node current, int key)
+        {
+            //base case: if current node is null, return null
+            if(current == null) return null;
+
+            //if current node contains key, delete it and return the next node
+            if(current.Data == key)
+            {
+                Node temp = current.Next; //store next node
+                current.Dispose(); //dispose current node
+                return temp; //return next node
+            }
+
+            //recursively call method on the next node
+            current.Next = DeleteNodeByKeyRecursive(current.Next, key);
+
+            return current; //return current node after deletion
+        }
+
         // Method to traverse and print the linked list
         public void PrintList()
         {

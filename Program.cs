@@ -1,7 +1,9 @@
 ﻿using DataStructureInterviewPrep.DataStructureTypes.Arrays;
 using DataStructureInterviewPrep.DataStructureTypes.Dictionary;
 using DataStructureInterviewPrep.DataStructureTypes.LinkedList.SinglyLinkedList;
+using DataStructureInterviewPrep.DataStructureTypes.Stack;
 using System;
+using System.Collections;
 
 namespace DataStructureInterviewPrep
 {
@@ -96,10 +98,75 @@ namespace DataStructureInterviewPrep
 
             //delete an item from the middle of the list
             Console.WriteLine();
-            list.DeleteMiddle(2);
-            Console.WriteLine($"List after deleting 2 from middle");
+            //list.DeleteMiddle(2);
+            //Console.WriteLine($"List after deleting 2 from middle");
+            //list.PrintList();
+
+            list.DeleteNodeByKeyRecursive(2); //delete item using recursive
+            Console.WriteLine($"List after deleting 2 from middle using recursive");
             list.PrintList();
 
+            //check if lists are identical
+            LinkedListQuestions list1 = new LinkedListQuestions();
+            list1.AddEnd(1);
+            list1.AddEnd(2);
+            list1.AddEnd(2);
+            list1.AddEnd(3);
+            list1.AddEnd(3);
+            list1.AddEnd(3);
+
+            LinkedListQuestions list2 = new LinkedListQuestions();
+            list2.AddEnd(1);
+            list2.AddEnd(2);
+            list2.AddEnd(2);
+            list2.AddEnd(3);
+            list2.AddEnd(3);
+            list2.AddEnd(3);
+
+            bool areIdentical = list1.AreIdentical(list1, list2);
+            Console.WriteLine();
+            Console.WriteLine($"Are the lists identical? {areIdentical}");
+
+            //method to remove duplicates from sorted linked list
+            LinkedListQuestions linkedListDups = new LinkedListQuestions();
+            linkedListDups.AddEnd(11);
+            linkedListDups.AddEnd(22);
+            linkedListDups.AddEnd(22);
+            linkedListDups.AddEnd(33);
+            linkedListDups.AddEnd(33);
+            linkedListDups.AddEnd(44);
+
+            Console.WriteLine();
+            linkedListDups.RemoveDuplicates();
+            Console.WriteLine();
+            Console.WriteLine($"List after duplicate removal:");
+            linkedListDups.PrintList();
+
+            LinkedListQuestions midLinkedList = new LinkedListQuestions();
+            midLinkedList.AddEnd(100);
+            midLinkedList.AddEnd(200);
+            midLinkedList.AddEnd(300);
+            midLinkedList.AddEnd(400);
+            midLinkedList.AddEnd(500);
+            midLinkedList.AddEnd(600);
+
+            //find middle node using ArrayList
+            Node middleNode = midLinkedList.FindMiddleUsingArrayList();
+            Console.WriteLine();
+            Console.WriteLine($"Middle node linked list");
+            midLinkedList.PrintList();
+            Console.WriteLine($"Middle node: {middleNode.Data}");
+
+            //stack operations
+            Console.WriteLine();
+            Console.WriteLine("Stack operations");
+            Stack myStack = new Stack();
+            StackOperation.PushToStack(myStack, new [] {11,22,33,44,55,66});
+            Console.WriteLine($"Size of stack: {StackOperation.SizeOfStack(myStack)}");
+            Console.WriteLine($"Top element of the stack: {StackOperation.PeekStack(myStack)}");
+            StackOperation.PopAndPrintStack(myStack);
+            bool isEmpty = StackOperation.IsStackEmpty(myStack);
+            Console.WriteLine($"Is the stack empty? {isEmpty}");
 
             Console.ReadLine();
         }

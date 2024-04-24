@@ -43,10 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataStructureTypes\Arrays\ArraysOperation.cs" />
-    <Compile Include="DataStructureTypes\Dictionary\WordCounter.cs" />
-    <Compile Include="DataStructureTypes\LinkedList\SinglyLinkedList\LinkedList.cs" />
-    <Compile Include="DataStructureTypes\LinkedList\SinglyLinkedList\Node.cs" />
+    <Compile Include="DataStructureTypes\ArraysOperation.cs" />
+    <Compile Include="DataStructureTypes\WordCounter.cs" />
+    <Compile Include="DataStructureTypes\LinkedList.cs" />
+    <Compile Include="DataStructureTypes\LinkedListQuestions.cs" />
+    <Compile Include="DataStructureTypes\Node.cs" />
+    <Compile Include="DataStructureTypes\StackOperation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
