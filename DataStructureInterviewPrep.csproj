@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataStructureTypes\Arrays\ArraysConsole.cs" />
+    <Compile Include="DataStructureTypes\Arrays\ArraysOperation.cs" />
     <Compile Include="DataStructureTypes\Dictionary\WordCounter.cs" />
     <Compile Include="DataStructureTypes\LinkedList\SinglyLinkedList\LinkedList.cs" />
     <Compile Include="DataStructureTypes\LinkedList\SinglyLinkedList\Node.cs" />

@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace DataStructureInterviewPrep.DataStructureTypes.Arrays
 {
-    public static class ArraysConsole
+    public static class ArraysOperation
     {
         public static void Array2DExample()
         {
