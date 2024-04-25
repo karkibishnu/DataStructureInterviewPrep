@@ -9,8 +9,9 @@ namespace DataStructureInterviewPrep.DataStructureTypes
     public static class TwoPointer
     {
         //method to print pairs with both positive and negative values
-        public static void PrintPairsWithPositiveAndNegative(int[] arr)
+        public static void PrintPairsWithPositiveAndNegative()
         {
+            int[] arr = { -1, 2, 4, 3, 5, -5, 1 };
             //sort array to use two pointer
             Array.Sort(arr);
 

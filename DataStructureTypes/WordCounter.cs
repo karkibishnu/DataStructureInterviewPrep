@@ -5,8 +5,9 @@ namespace DataStructureInterviewPrep.DataStructureTypes.Dictionary
 {
     public static class WordCounter
     {
-        public static void CountWords(string input)
+        public static void CountWords()
         {
+            string input = "If you change your mind, you can change your life";
             Dictionary<string, int> wordCounts = new Dictionary<string, int>();
 
             //split input string by space
