@@ -97,12 +97,13 @@ namespace DataStructureInterviewPrep
                 Console.WriteLine("22. Delete middle of Stack recursively");
                 Console.WriteLine("23. Postfix to prefix");
                 Console.WriteLine("24. Prefix to postfix");
+                Console.WriteLine("25. Queue operations");
                 Console.WriteLine("99. Exit");
                 Console.Write("Enter your choice (1 through 98, 99 to Exit)");
 
                 string choice = Console.ReadLine();
 
-                switch(choice)
+                switch (choice)
                 {
                     case "1":
                         WordCounter.CountWords();
@@ -115,70 +116,70 @@ namespace DataStructureInterviewPrep
                         break;
                     case "4":
                         Console.WriteLine($"Are the lists identical? {list1.AreIdentical(list1, list2)}");
-                        break; 
+                        break;
                     case "5":
                         list.PrintList();
-                        break; 
+                        break;
                     case "6":
                         list.SearchUsingIterativeApproach(key1);
                         list.SearchUsingIterativeApproach(key2);
-                        break; 
+                        break;
                     case "7":
                         Console.WriteLine($"Recursive Search for {key1}: {(list.SearchRecursive(key1) ? "Yes" : "No")}");
                         Console.WriteLine($"Recursive Search for {key2}: {(list.SearchRecursive(key2) ? "Yes" : "No")}");
-                        break; 
+                        break;
                     case "8":
                         Console.WriteLine($"Number of nodes in the list using iterative: {list.CountAvailableNodesIterative()}");
-                        break; 
+                        break;
                     case "9":
                         int nodeCount = list.CountNodesRecursive();
                         Console.WriteLine($"Number of nodes in the list using recursive: {nodeCount}");
-                        break; 
+                        break;
                     case "10":
                         list.PrintList();
                         list.ReverseList();
                         list.PrintList();
-                        break; 
+                        break;
                     case "11":
                         list.PrintList();
                         list.ReverseRecursive();
                         list.PrintList();
-                        break; 
+                        break;
                     case "12":
                         list.PrintList();
                         list.ReverseWithStack();
                         list.PrintList();
-                        break; 
+                        break;
                     case "13":
                         list.PrintList();
                         list.DeleteBeginning();
                         list.PrintList();
-                        break; 
+                        break;
                     case "14":
                         list.PrintList();
                         list.DeleteMiddle(2);
                         list.PrintList();
-                        break; 
+                        break;
                     case "15":
                         list.PrintList();
                         list.DeleteEnd();
                         list.PrintList();
-                        break; 
+                        break;
                     case "16":
                         list.PrintList();
                         list.DeleteNodeByKeyRecursive(2);
                         list.PrintList();
-                        break; 
+                        break;
                     case "17":
                         list.PrintList();
                         linkedListDups.RemoveDuplicates();
                         list.PrintList();
-                        break; 
+                        break;
                     case "18":
                         Node middleNode = midLinkedList.FindMiddleUsingArrayList();
                         midLinkedList.PrintList();
                         Console.WriteLine($"Middle node: {middleNode.Data}");
-                        break; 
+                        break;
                     case "19":
                         Stack myStack = new Stack();
                         StackOperation.PushToStack(myStack, new[] { 11, 22, 33, 44, 55, 66 });
@@ -214,6 +215,14 @@ namespace DataStructureInterviewPrep
                     case "24":
                         string postfix = StackExamples.ConvertPrefixToPostfix();
                         Console.WriteLine($"Prefix to postfix: {postfix}");
+                        break;
+                    case "25":
+                        Queue<int> insertedQueue = QueueOperation.InsertInQueue();
+                        Console.WriteLine($"Queue count: {insertedQueue.Count}");
+                        Console.WriteLine($"Peek value: {QueueOperation.PeekQueue(insertedQueue)}");
+                        QueueOperation.DeleteInQueue(insertedQueue);
+                        Console.WriteLine($"Queue count: {insertedQueue.Count}");
+                        Console.WriteLine($"Is Queue Empty: {QueueOperation.IsQueueEmpty(insertedQueue)}");
                         break;
                     case "99":
                         Console.WriteLine("Exiting program");
