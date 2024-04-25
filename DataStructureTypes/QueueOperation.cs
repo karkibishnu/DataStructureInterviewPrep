@@ -18,10 +18,16 @@ namespace DataStructureInterviewPrep.DataStructureTypes
             return queue;
         }
 
-        public static int PeekQueue(Queue<int> queue)
+        public static int PeekFirstQueue(Queue<int> queue)
         {
-            int peekValue = queue.Peek();
-            return peekValue;
+            int peekFirstValue = queue.Peek();
+            return peekFirstValue;
+        }
+        
+        public static int PeekLastQueue(Queue<int> queue)
+        {
+            int peekLastValue = queue.Last();
+            return peekLastValue;
         }
 
         public static Queue<int> DeleteInQueue(Queue<int> queue)

@@ -219,7 +219,8 @@ namespace DataStructureInterviewPrep
                     case "25":
                         Queue<int> insertedQueue = QueueOperation.InsertInQueue();
                         Console.WriteLine($"Queue count: {insertedQueue.Count}");
-                        Console.WriteLine($"Peek value: {QueueOperation.PeekQueue(insertedQueue)}");
+                        Console.WriteLine($"Peek First Value: {QueueOperation.PeekFirstQueue(insertedQueue)}");
+                        Console.WriteLine($"Peek Last Value: {QueueOperation.PeekLastQueue(insertedQueue)}");
                         QueueOperation.DeleteInQueue(insertedQueue);
                         Console.WriteLine($"Queue count: {insertedQueue.Count}");
                         Console.WriteLine($"Is Queue Empty: {QueueOperation.IsQueueEmpty(insertedQueue)}");
