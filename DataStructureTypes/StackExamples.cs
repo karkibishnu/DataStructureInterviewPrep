@@ -74,21 +74,22 @@ namespace DataStructureInterviewPrep.DataStructureTypes
         {
             string postfix = "AB+CD-*";// "ABC/-AK/L-*";
 
-            //string stack to store the expresion
             char[] postfixCharArray = postfix.ToCharArray();
 
+            //string stack to store the expresion
             Stack<string> stringStack = new Stack<string>();
             foreach (char c in postfixCharArray)
             {
                 //push c until operator is hit
                 if(IsOperator(c)) {
                     //if operator is encounter, pop two operand and perform formula
+                    //formula: operator + operand2 + operand1
                     string operand1 = stringStack.Pop();
                     string operand2 = stringStack.Pop();
-                    string formulatedValue = c + operand2 + operand1;
+                    string calculatedValue = c + operand2 + operand1;
 
                     //push value back to stack
-                    stringStack.Push(formulatedValue);
+                    stringStack.Push(calculatedValue);
                 }
                 else //if not operator, insert into stack
                 {
@@ -104,6 +105,50 @@ namespace DataStructureInterviewPrep.DataStructureTypes
                 
             return prefix;
         }
+
+        //convert prefix to postfix 
+        //first need to Reverse and solve using formula
+        //use formula operand1 + operand2 + operator
+        public static string ConvertPrefixToPostfix()
+        {
+            string input = "*-A/BC-/AKL";
+
+            //convert reversed input to char array
+            char[] prefixCharArray = input.ToCharArray();
+
+            //reverse the array
+            Array.Reverse(prefixCharArray);
+
+            //store calculated value to string stack
+            Stack<string> stringStack = new Stack<string>();
+
+            foreach (char c in prefixCharArray)
+            {
+                //if operand, push to stack
+                if (IsOperator(c))
+                {
+                    //pop two items and perform formula
+                    //formula: operand1 + operand2 + operator
+                    string operand1 = stringStack.Pop();
+                    string operand2 = stringStack.Pop();
+                    string calculatedValue = operand1 + operand2 + c;
+
+                    stringStack.Push(calculatedValue);
+                }
+                else
+                {
+                    stringStack.Push(c.ToString());
+                }                
+            }
+            string postfix = string.Empty;
+            for (int i = 0; i < stringStack.Count; i++)
+            {
+                postfix += stringStack.Pop();
+            }
+
+            return postfix;
+        }
+
         private static bool IsOperator(char c)
         {
             string operatorList = "+-/*";
@@ -112,7 +157,7 @@ namespace DataStructureInterviewPrep.DataStructureTypes
         }
 
         //method to delete middle element from stack recursively
-        public static void DeleteMiddleElement(System.Collections.Stack middleElementStack, int current)
+        public static void DeleteMiddleElement(Stack<int> middleElementStack, int current)
         {
             //base condition: if current position is 1, pop the element
             if(current ==1)
@@ -132,7 +177,7 @@ namespace DataStructureInterviewPrep.DataStructureTypes
         }
 
         // Method to print the stack
-        public static void PrintStackElements(System.Collections.Stack stack)
+        public static void PrintStackElements(Stack<int> stack)
         {
             foreach (var item in stack)
             {

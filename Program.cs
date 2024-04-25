@@ -63,7 +63,7 @@ namespace DataStructureInterviewPrep
             midLinkedList.AddEnd(600);
 
             //create stack and push some elements for removing middle item
-            Stack middleItemStack = new Stack();
+            Stack<int> middleItemStack = new Stack<int>();
             middleItemStack.Push(1);
             middleItemStack.Push(2);
             middleItemStack.Push(3);
@@ -93,9 +93,10 @@ namespace DataStructureInterviewPrep
                 Console.WriteLine("18. Find middle node using arraylist");
                 Console.WriteLine("19. Stack operations");
                 Console.WriteLine("20. Check Balanced Stack");
-                Console.WriteLine("21. Reverse String using Stack");
-                Console.WriteLine("22. Postfix to prefix");
-                Console.WriteLine("23. Delete middle of Stack recursively");
+                Console.WriteLine("21. Reverse String using Stack");                
+                Console.WriteLine("22. Delete middle of Stack recursively");
+                Console.WriteLine("23. Postfix to prefix");
+                Console.WriteLine("24. Prefix to postfix");
                 Console.WriteLine("99. Exit");
                 Console.Write("Enter your choice (1 through 98, 99 to Exit)");
 
@@ -200,15 +201,19 @@ namespace DataStructureInterviewPrep
                         Console.WriteLine();
                         break;
                     case "22":
-                        string prefix = StackExamples.ConvertPostfixToPrefix();
-                        Console.WriteLine($"Postfix to prefix: {prefix}");
-                        break;
-                    case "23":
                         Console.WriteLine($"Original Stack: {middleItemStack}");
                         StackExamples.PrintStackElements(middleItemStack);
                         StackExamples.DeleteMiddleElement(middleItemStack, (middleItemStack.Count / 2) + 1);
                         Console.WriteLine($"Stack after deleting middle element:");
                         StackExamples.PrintStackElements(middleItemStack);
+                        break;
+                    case "23":
+                        string prefix = StackExamples.ConvertPostfixToPrefix();
+                        Console.WriteLine($"Postfix to prefix: {prefix}");
+                        break;
+                    case "24":
+                        string postfix = StackExamples.ConvertPrefixToPostfix();
+                        Console.WriteLine($"Prefix to postfix: {postfix}");
                         break;
                     case "99":
                         Console.WriteLine("Exiting program");
