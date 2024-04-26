@@ -41,7 +41,9 @@ namespace DataStructureInterviewPrep.DataStructureTypes.Arrays
 
             handle.Free();
 
+
             //2D array using jagged array
+            //declare and initialize a jagged array
             int[][] jaggedArray = new int[][]
             {
                 new int[] {2,3,4},
@@ -51,11 +53,12 @@ namespace DataStructureInterviewPrep.DataStructureTypes.Arrays
             };
 
             //print the jagged array
+            Console.WriteLine("Jagged Array:");
             for (int i=0; i < jaggedArray.Length;i++)
             {
                 for (int j = 0; j < jaggedArray[i].Length; j++)
                 {
-                    Console.WriteLine(jaggedArray[i][j] + " ");
+                    Console.WriteLine(jaggedArray[i][j] + " "); //accessing and printing each element of jagged array
                 }
             }
         }
