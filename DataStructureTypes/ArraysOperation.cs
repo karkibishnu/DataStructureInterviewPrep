@@ -10,9 +10,9 @@ namespace DataStructureInterviewPrep.DataStructureTypes.Arrays
             //Define a 2D araray
             int[,] arr = new int[3, 4]
             {
-            {1,2,3,4 },
-            {5,6,7,8 },
-            {9,10,11,12}
+                {1,2,3,4 },
+                {5,6,7,8 },
+                {9,10,11,12}
             };
 
             int rows = arr.GetLength(0);
@@ -40,6 +40,24 @@ namespace DataStructureInterviewPrep.DataStructureTypes.Arrays
             }
 
             handle.Free();
+
+            //2D array using jagged array
+            int[][] jaggedArray = new int[][]
+            {
+                new int[] {2,3,4},
+                new int[] {5,6,7},
+                new int[] {9,10,11},
+                new int[] {12,13,14},
+            };
+
+            //print the jagged array
+            for (int i=0; i < jaggedArray.Length;i++)
+            {
+                for (int j = 0; j < jaggedArray[i].Length; j++)
+                {
+                    Console.WriteLine(jaggedArray[i][j] + " ");
+                }
+            }
         }
     }
 }
